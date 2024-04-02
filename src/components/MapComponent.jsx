@@ -9,7 +9,8 @@ import Map, {
 } from "react-map-gl"
 import { usePapaParse } from "react-papaparse"
 
-let pathToCSV = "./data/gtw-facility-analysis_2023-08-15-1692117740.csv"
+let pathToCSV =
+  "https://raw.githubusercontent.com/o0o0o0o0o0o0o0o0o0/geothermal-ui/main/src/components/data/gtw-facility-analysis_2023-08-15-1692117740.csv"
 const pinStyle = {
   cursor: "pointer",
   fill: "#d00",
@@ -53,7 +54,6 @@ const MapComponent = () => {
         const results = readString(data, { header: true })
         setMarkers(results.data)
 
-        // set popup info parsed results.data
         setExplorerData(
           results.data.map((data) => {
             return {
