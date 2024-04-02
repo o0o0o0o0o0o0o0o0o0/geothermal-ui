@@ -66,21 +66,27 @@ Density Of Water, -1`)
           hip_ra_input_parameters: params,
         }),
       }
-    ).then((response) => {
-      console.debug("Response:", response)
-      setHipRaLoading(false)
-
-      response.json().then((responseJson) => {
-        console.debug("Response body:\n", responseJson)
+    )
+      .then((response) => {
+        console.debug("Response:", response)
         setHipRaLoading(false)
 
-        if (!response.ok) {
-          setErrorMessage(`Error: ${responseJson["error"]}`)
-        } else {
-          setHipRaResult(responseJson["caseReportText"])
-        }
+        response.json().then((responseJson) => {
+          console.debug("Response body:\n", responseJson)
+          setHipRaLoading(false)
+
+          if (!response.ok) {
+            setErrorMessage(`Error: ${responseJson["error"]}`)
+          } else {
+            setHipRaResult(responseJson["caseReportText"])
+          }
+        })
       })
-    })
+      .catch((error) => {
+        console.error("Error:", error)
+        setHipRaLoading(false)
+        setErrorMessage("Failed to run HIP-RA-X")
+      })
   }
 
   return (
