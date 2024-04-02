@@ -9,8 +9,7 @@ import Map, {
 } from "react-map-gl"
 import { usePapaParse } from "react-papaparse"
 
-let pathToCSV =
-  "src/components/data/gtw-facility-analysis_2023-08-15-1692117740.csv"
+let pathToCSV = "./data/gtw-facility-analysis_2023-08-15-1692117740.csv"
 const pinStyle = {
   cursor: "pointer",
   fill: "#d00",
