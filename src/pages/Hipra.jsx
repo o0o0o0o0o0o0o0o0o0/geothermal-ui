@@ -54,9 +54,9 @@ Density Of Water, -1`)
 
     setHipRaLoading(true)
     let apigId = "nmgmk2gu5b"
-    if (getLocationHost().indexOf("localhost") !== -1) {
-      apigId = "d4nshmdoig"
-    }
+    // if (getLocationHost().indexOf("localhost") !== -1) {
+    //   apigId = "d4nshmdoig"
+    // }
 
     fetch(
       `https://${apigId}.execute-api.us-west-2.amazonaws.com/get-hip-ra-result`,
